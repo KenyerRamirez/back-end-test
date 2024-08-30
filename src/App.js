@@ -11,7 +11,7 @@ import { verifyAccessToken } from "./controllers/AuthController/AuthController.j
 const app = express();
 
 app.use(cors({
-    origin: "http://localhost:3000",  // URL de tu frontend
+    origin: "http://localhost:3000",
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   }));  
