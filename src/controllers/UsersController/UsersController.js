@@ -2,7 +2,9 @@ import Usuario from "../../models/Users/Users.js";
 
 export const getEmployees = async (req, res) => {
   try {
-    const usersData = await Usuario.find({ rol: "Employee" }).exec();
+    const usersData = await Usuario.find({ rol: "Employee" })
+      .select("_id nombre puestoTrabajo")
+      .exec();
     res.status(200).json({
       status: 200,
       message: "employees retrieved",
